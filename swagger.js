@@ -1,4 +1,5 @@
 const swaggerJsDoc = require('swagger-jsdoc');
+const path = require('path');
 const packageJson = require('./package.json');
 
 const swaggerOptions = {
@@ -50,7 +51,7 @@ const swaggerOptions = {
       },
     },
   },
-  apis: ['./routes/*.js'],
+  apis: [path.join(__dirname, 'routes', '*.js')],
 };
 
 module.exports = swaggerJsDoc(swaggerOptions);
